@@ -15,4 +15,3 @@ run:
   jarName: MegaChat-0.0.1-SNAPSHOT.jar
   persistenceMount: /data
   containerPort: 8080
-  servicePort: 80
