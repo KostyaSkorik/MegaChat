@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: MegaChat
+
+  datasource:
+    url:  jdbc:postgresql://megachat-db-kostyaskorik.db-msk0.amvera.tech/MegaChat
+    username: KostyaSkorik
+    password: Ka2004-skor
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+
