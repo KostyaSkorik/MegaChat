@@ -18,9 +18,9 @@ public class UserController {
     public ResponseEntity<List<User>> getAll(){
         List<User> users = new ArrayList<>();
 
-        users.add(new User(1L,"Stepa","Loh"));
-        users.add(new User(2L,"Stepa","Loh"));
-        users.add(new User(3L,"Stepa","Loh"));
+        users.add(new User(1L,"Stepa","cool gay"));
+        users.add(new User(2L,"Stepa","cool gay"));
+        users.add(new User(3L,"Stepa","cool gay"));
 
         return ResponseEntity.ok().body(users);
     }
