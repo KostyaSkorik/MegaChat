@@ -3,6 +3,8 @@ package by.kostya.megachat.rest;
 
 import by.kostya.megachat.db.entity.User;
 import by.kostya.megachat.db.repository.UserRepository;
+import by.kostya.megachat.dto.UserReadDto;
+import by.kostya.megachat.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +17,10 @@ import java.util.List;
 @RequestMapping("api/users")
 @RequiredArgsConstructor
 public class UserController {
-
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll(){
-        return ResponseEntity.ok().body(userRepository.findAll());
+    public ResponseEntity<List<UserReadDto>> findAll(){
+        return ResponseEntity.ok().body(userService.findAll());
     }
 }
