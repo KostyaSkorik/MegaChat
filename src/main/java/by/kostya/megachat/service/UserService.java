@@ -5,6 +5,8 @@ import by.kostya.megachat.db.repository.UserRepository;
 import by.kostya.megachat.dto.UserReadDto;
 import by.kostya.megachat.mapper.UserReadMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +18,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserReadMapper userReadMapper;
 
-    public List<UserReadDto> findAll(){
-        return userRepository.findAll().stream().map(userReadMapper::toDTO).toList();
+    public Page<UserReadDto> findAll(Pageable pageable){
+        return userRepository.findAll(pageable).map(userReadMapper::toDTO);
     }
 }
